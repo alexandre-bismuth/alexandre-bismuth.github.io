@@ -18,15 +18,18 @@ menu:
         - name: Resume
           url: resume/
           weight: 2
-        - name: Research Projects
+        - name: Research
           url: research_projects/
           weight: 3
         - name: Course Projects
           url: course_projects/
           weight: 4
+        - name: Side Projects
+          url: side_projects/
+          weight: 5
         - name: Blog
           url: blog/
-          weight: 5
+          weight: 6
 
 
 params:
@@ -45,7 +48,7 @@ params:
     ShowBreadCrumbs: false
     ShowCodeCopyButtons: true
     ShowAllPagesInArchive: false
-    MainSections: ["resume","research_projects","course_projects","blog"]
+    MainSections: ["resume","research_projects","course_projects","blog","side_projects"]
     ShowToc: false
     disableScrollToTop: true
     TocOpen: true
@@ -65,10 +68,12 @@ params:
               url: resume/
             # - name: Papers
             #   url: papers/
-            - name: Research Projects
+            - name: Research
               url: research_projects/
             - name: Course Projects
               url: course_projects/
+            - name: Side Projects
+              url: side_projects/
             - name: Blog
               url: blog/
 
