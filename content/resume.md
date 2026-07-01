@@ -7,7 +7,7 @@ hidemeta: true
 Contact: [abismuth@g.harvard.edu](mailto:abismuth@g.harvard.edu) • [linkedin.com/in/alex-bsmth](https://linkedin.com/in/alex-bsmth/)
 
 <div class="buttons" style="display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 4px 0;">
-  <a class="button" style="text-align:center;margin:0;padding:5px 16px;background:rgba(0,0,0,0.1);" href="cv.pdf"><span class="button-inner">Download PDF</span></a>
+  <a class="button" style="text-align:center;margin:0;padding:5px 16px;background:rgba(0,0,0,0.1);" href="/cv.pdf"><span class="button-inner">Download PDF</span></a>
 </div>
 
 ---
