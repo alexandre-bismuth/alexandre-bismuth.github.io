@@ -17,6 +17,7 @@ Contact: [abismuth@g.harvard.edu](mailto:abismuth@g.harvard.edu) • [linkedin.c
 **Harvard University** — Cambridge, MA, USA · *2026 – 2027*  
 *MS Data Science*
 - Coursework: Data Science, Machine Learning Topics, Sparse Inference, Efficient Deep Learning, Sensorimotor Learning.
+- Anne Dias Griffin and Kenneth C. Griffin Fellow
 
 **University of Oxford** — Oxford, UK · *2025 – 2026*  
 *MSc in Advanced Computer Science (AI Specialisation)*
