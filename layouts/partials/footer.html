@@ -4,7 +4,7 @@
     {{- if site.Copyright }}
     <span>{{ site.Copyright | markdownify }}</span>
     {{- else }}
-    <span>&copy; {{ now.Year }} {{ site.Title }}</span>
+    <span>&copy; {{ now.Year }} <span class="site-name">{{ site.Title }}</span></span>
     {{- end }}
     <!-- {{- print " · "}} -->
     {{- end }}

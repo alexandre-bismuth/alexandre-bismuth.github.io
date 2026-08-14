@@ -90,8 +90,10 @@ params:
           url: https://github.com/alexandre-bismuth
         # - name: Substack
         #   url: https://user.substack.com
-        - name: Twitter
+        - name: X
           url: https://x.com/alex_bsmth
+        - name: LinkedIn
+          url: https://www.linkedin.com/in/alex-bsmth/
         - name: YouTube
           url: https://www.youtube.com/@KoVer10
 

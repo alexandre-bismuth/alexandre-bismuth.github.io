@@ -70,6 +70,9 @@
 <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" rel="preload stylesheet" as="style">
 {{- end }}
 
+{{- /* Dot-matrix display font (titles + site name) — preloaded so it paints with the first frame */}}
+<link rel="preload" href="{{ "fonts/doto-latin.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
+
 {{- /* Search */}}
 {{- if (eq .Layout `search`) -}}
 <link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
