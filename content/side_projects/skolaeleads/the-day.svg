@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 340" width="860" height="340" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="d1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="d2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#bdbdbd"/>
+    </marker>
+  </defs>
+  <rect width="860" height="340" fill="#ffffff"/>
+
+  <text x="30" y="26" font-size="14" fill="#8a8a8a" letter-spacing="1.6">TODAY</text>
+  <g stroke="#1a1a1a" stroke-width="1.5" fill="#ffffff">
+    <rect x="30"  y="46" width="240" height="80" rx="10"/>
+    <rect x="310" y="46" width="240" height="80" rx="10"/>
+  </g>
+  <rect x="590" y="46" width="240" height="80" rx="10" stroke="#c9c9c9" stroke-width="1.5" fill="#fbfbfb"/>
+  <g text-anchor="middle" font-size="20" fill="#1a1a1a">
+    <text x="150" y="82">Conversation</text>
+    <text x="430" y="82">A note, scribbled</text>
+    <text x="710" y="82" fill="#9a9a9a">Typed up days later</text>
+  </g>
+  <g text-anchor="middle" font-size="14" fill="#777777">
+    <text x="150" y="106">five minutes, eye contact</text>
+    <text x="430" y="106">attention already gone</text>
+    <text x="710" y="106" fill="#aaaaaa">partial, cold, from memory</text>
+  </g>
+  <g stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#d1)"><line x1="278" y1="86" x2="302" y2="86"/></g>
+  <g stroke="#bdbdbd" stroke-width="1.5" marker-end="url(#d2)"><line x1="558" y1="86" x2="582" y2="86"/></g>
+
+  <text x="30" y="206" font-size="14" fill="#8a8a8a" letter-spacing="1.6">WITH SKOLAELEADS</text>
+  <rect x="30" y="226" width="240" height="80" rx="10" stroke="#1a1a1a" stroke-width="1.5" fill="#ffffff"/>
+  <g stroke="#e4572e" stroke-width="1.5" fill="#fdf2ee">
+    <rect x="310" y="226" width="240" height="80" rx="10"/>
+    <rect x="590" y="226" width="240" height="80" rx="10"/>
+  </g>
+  <g text-anchor="middle" font-size="20" fill="#1a1a1a">
+    <text x="150" y="262">Conversation</text>
+    <text x="430" y="262">The form fills itself</text>
+    <text x="710" y="262">In the CRM by evening</text>
+  </g>
+  <g text-anchor="middle" font-size="14" fill="#777777">
+    <text x="150" y="286">five minutes, eye contact</text>
+    <text x="430" y="286">a glance down to confirm</text>
+    <text x="710" y="286">complete, scored, warm</text>
+  </g>
+  <g stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#d1)">
+    <line x1="278" y1="266" x2="302" y2="266"/>
+    <line x1="558" y1="266" x2="582" y2="266"/>
+  </g>
+</svg>

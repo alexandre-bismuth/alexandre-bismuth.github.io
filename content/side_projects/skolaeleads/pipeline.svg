@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 510" width="1600" height="510" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a8a8a"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="510" fill="#ffffff"/>
+
+  <!-- section label: live -->
+  <text x="40" y="52" font-size="15" fill="#8a8a8a" letter-spacing="1.6">LIVE — WHILE THE CONVERSATION HAPPENS</text>
+
+  <!-- row 1 boxes -->
+  <g stroke="#1a1a1a" stroke-width="1.5" fill="#ffffff">
+    <rect x="40"   y="80" width="260" height="80" rx="10"/>
+    <rect x="355"  y="80" width="260" height="80" rx="10"/>
+    <rect x="670"  y="80" width="260" height="80" rx="10"/>
+  </g>
+  <g stroke="#e4572e" stroke-width="1.5" fill="#fdf2ee">
+    <rect x="985"  y="80" width="260" height="80" rx="10"/>
+    <rect x="1300" y="80" width="260" height="80" rx="10"/>
+  </g>
+  <g text-anchor="middle" fill="#1a1a1a" font-size="20">
+    <text x="170"  y="116">Bluetooth mic</text>
+    <text x="485"  y="116">Android app</text>
+    <text x="800"  y="116">Relay</text>
+    <text x="1115" y="116">Voxtral Realtime</text>
+    <text x="1430" y="116">Mistral Small</text>
+  </g>
+  <g text-anchor="middle" fill="#777777" font-size="14">
+    <text x="170"  y="140">worn all day by the rep</text>
+    <text x="485"  y="140">16 kHz PCM over WebSocket</text>
+    <text x="800"  y="140">Python · ECS Fargate</text>
+    <text x="1115" y="140">live French transcript</text>
+    <text x="1430" y="140">windowed field extraction</text>
+  </g>
+  <g stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#ar)">
+    <line x1="308" y1="120" x2="347" y2="120"/>
+    <line x1="623" y1="120" x2="662" y2="120"/>
+    <line x1="938" y1="120" x2="977" y2="120"/>
+    <line x1="1253" y1="120" x2="1292" y2="120"/>
+  </g>
+
+  <!-- feedback loop -->
+  <path d="M1430 160 L1430 228 L485 228 L485 168" fill="none" stroke="#8a8a8a" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="957" y="220" text-anchor="middle" font-size="15" fill="#8a8a8a">transcript + lead form pushed back to the phone, for the rep to verify</text>
+
+  <!-- divider -->
+  <text x="40" y="290" font-size="15" fill="#8a8a8a" letter-spacing="1.6">END OF DAY — THE PHONE UPLOADS CONFIRMED LEADS AND THE FULL TRANSCRIPT</text>
+  <line x1="40" y1="308" x2="1560" y2="308" stroke="#d5d5d5" stroke-width="1.5" stroke-dasharray="6 5"/>
+
+  <!-- row 2 boxes -->
+  <g stroke="#e4572e" stroke-width="1.5" fill="#fdf2ee">
+    <rect x="40"  y="370" width="260" height="80" rx="10"/>
+    <rect x="355" y="370" width="260" height="80" rx="10"/>
+  </g>
+  <g stroke="#1a1a1a" stroke-width="1.5" fill="#ffffff">
+    <rect x="670"  y="370" width="260" height="80" rx="10"/>
+    <rect x="985"  y="370" width="260" height="80" rx="10"/>
+    <rect x="1300" y="370" width="260" height="80" rx="10"/>
+  </g>
+  <g text-anchor="middle" fill="#1a1a1a" font-size="20">
+    <text x="170"  y="406">Finalize pass</text>
+    <text x="485"  y="406">Rubric scoring</text>
+    <text x="800"  y="406">Reconcile</text>
+    <text x="1115" y="406">CRM export</text>
+    <text x="1430" y="406">Two emails</text>
+  </g>
+  <g text-anchor="middle" fill="#777777" font-size="14">
+    <text x="170"  y="430">re-segment + speaker roles</text>
+    <text x="485"  y="430">raw score + percentile</text>
+    <text x="800"  y="430">the rep's checks win</text>
+    <text x="1115" y="430">idempotent HubSpot upsert</text>
+    <text x="1430" y="430">private coaching · summary</text>
+  </g>
+  <g stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#ar)">
+    <line x1="308" y1="410" x2="347" y2="410"/>
+    <line x1="623" y1="410" x2="662" y2="410"/>
+    <line x1="938" y1="410" x2="977" y2="410"/>
+    <line x1="1253" y1="410" x2="1292" y2="410"/>
+  </g>
+</svg>

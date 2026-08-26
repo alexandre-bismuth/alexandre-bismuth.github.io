@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 366" width="880" height="366" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="l1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+  <rect width="880" height="366" fill="#ffffff"/>
+
+  <text x="30" y="28" font-size="14" fill="#8a8a8a" letter-spacing="1.6">WHAT THE MIC HEARS</text>
+  <rect x="30" y="42" width="360" height="286" rx="10" fill="#fafafa" stroke="#dcdcdc" stroke-width="1.5"/>
+  <g font-size="15" fill="#9a9a9a">
+    <text x="52" y="92">Rep</text>
+    <text x="52" y="138">Élève</text>
+    <text x="52" y="206">Rep</text>
+    <text x="52" y="252">Élève</text>
+  </g>
+  <g font-size="15" fill="#1a1a1a">
+    <text x="104" y="92">« Vous êtes en quelle année ? »</text>
+    <text x="104" y="138">« En terminale, au lycée</text>
+    <text x="104" y="160">Fermat. »</text>
+    <text x="104" y="206">« Je vous envoie la brochure ? »</text>
+    <text x="104" y="252">« Oui : lea.martin@gmail.com,</text>
+    <text x="104" y="274">et le 06 12 34 56 78. »</text>
+  </g>
+
+  <line x1="404" y1="185" x2="466" y2="185" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#l1)"/>
+
+  <text x="490" y="28" font-size="14" fill="#8a8a8a" letter-spacing="1.6">WHAT THE REP GLANCES DOWN AT</text>
+  <rect x="490" y="42" width="360" height="286" rx="10" fill="#ffffff" stroke="#e4572e" stroke-width="1.5"/>
+  <g font-size="14" fill="#9a9a9a">
+    <text x="512" y="86">Nom</text>
+    <text x="512" y="124">Email</text>
+    <text x="512" y="162">Téléphone</text>
+    <text x="512" y="222">École</text>
+    <text x="512" y="260">Intérêt</text>
+  </g>
+  <g font-size="15" fill="#1a1a1a">
+    <text x="612" y="86">Léa Martin</text>
+    <text x="612" y="124">lea.martin@gmail.com</text>
+    <text x="612" y="162">+33 6 12 34 56 78</text>
+    <text x="612" y="222">Lycée Fermat, terminale</text>
+    <text x="612" y="260">programme ingénieur</text>
+  </g>
+  <g stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M818 82 l4 4 l7 -9"/>
+    <path d="M818 120 l4 4 l7 -9"/>
+    <path d="M818 218 l4 4 l7 -9"/>
+    <path d="M818 256 l4 4 l7 -9"/>
+  </g>
+  <circle cx="823" cy="158" r="5" fill="#e4572e"/>
+  <text x="612" y="182" font-size="12" fill="#e4572e">à confirmer — le champ le plus fragile</text>
+
+  <line x1="512" y1="284" x2="828" y2="284" stroke="#ececec" stroke-width="1.5"/>
+  <text x="512" y="310" font-size="15" fill="#1a1a1a">Score 82 · Chaud · 91e percentile</text>
+</svg>
