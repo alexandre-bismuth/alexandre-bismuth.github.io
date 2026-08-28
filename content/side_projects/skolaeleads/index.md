@@ -12,7 +12,7 @@ cover:
 
 ---
 
-*Ongoing personal start-up project. Private repository — Android (Kotlin), Python backend, AWS.*
+*Ongoing personal project in partenrship with [Skolae](https://www.skolae.fr/). Private repository — Android (Kotlin), Python backend, AWS.*
 
 ---
 

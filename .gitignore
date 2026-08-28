@@ -5,3 +5,4 @@ resources/
 
 # macOS
 .DS_Store
+.gstack/
