@@ -4,7 +4,7 @@ date: 2025-06-18
 tags: []
 author: "Alexandre Bismuth"
 description: "CSE306 Computer Graphics project: a free-surface 2D fluid solver built on Power diagrams, semi-discrete optimal transport with L-BFGS, and the de Gallouet-Mérigot incompressible Euler scheme."
-summary: "CSE306 Computer Graphics project at École Polytechnique. A free-surface 2D fluid solver built from the ground up — Voronoï and Power diagrams, semi-discrete optimal transport optimised with L-BFGS, and the de Gallouet-Mérigot incompressible Euler scheme."
+summary: "CSE306 Computer Graphics project at École Polytechnique. A free-surface 2D fluid solver built from the ground up: Voronoï and Power diagrams, semi-discrete optimal transport optimised with L-BFGS, and the de Gallouet-Mérigot incompressible Euler scheme."
 cover:
     image: "cover.png"
     alt: "Free-surface 2D fluid simulation of blue particles"
@@ -23,7 +23,7 @@ cover:
 
 ##### Overview
 
-This project implements a free-surface 2D fluid solver using incompressible Euler's equations. It implements all of the mandatory sections of the assignment — Voronoï Diagrams, Power Diagram, Optimization with LBFGS, the de Gallouet-Mérigot incompressible Euler scheme, and a spring force from each fluid particle to their Laguerre's cell centroid. The code is written in C++11 and split into headers and sources for organisational purposes, with a Makefile to simplify compilation. To ensure clarity and correctness, the code is also optimized as much as possible: `const` statements were added wherever possible to avoid and identify bugs easily, floating-point operations were prioritized for the highest precision, and the most efficient types were used for each variable to optimize memory.
+This project implements a free-surface 2D fluid solver using incompressible Euler's equations. It implements all of the mandatory sections of the assignment: Voronoï Diagrams, Power Diagram, Optimization with LBFGS, the de Gallouet-Mérigot incompressible Euler scheme, and a spring force from each fluid particle to their Laguerre's cell centroid. The code is written in C++11 and split into headers and sources for organisational purposes, with a Makefile to simplify compilation. To ensure clarity and correctness, the code is also optimized as much as possible: `const` statements were added wherever possible to avoid and identify bugs easily, floating-point operations were prioritized for the highest precision, and the most efficient types were used for each variable to optimize memory.
 
 ---
 
@@ -35,7 +35,7 @@ The first part of the project revolves around implementing the Voronoï Parallel
 
 ##### Power diagram and weights optimization with L-BFGS
 
-In this second part, the Voronoï diagram is converted to a Power diagram that generalizes it by assigning a weight to each point, implementing semi-discrete optimal transport with L-BFGS. Beyond uniform weights, the solver can be tested with arbitrary weight distributions — below, a Gaussian distribution (standard deviation *σ* = 0.18) and an exponential distribution from the bottom-left corner (*λ* = 4), each tailored for best visual results.
+In this second part, the Voronoï diagram is converted to a Power diagram that generalizes it by assigning a weight to each point, implementing semi-discrete optimal transport with L-BFGS. Beyond uniform weights, the solver can be tested with arbitrary weight distributions: below, a Gaussian distribution (standard deviation *σ* = 0.18) and an exponential distribution from the bottom-left corner (*λ* = 4), each tailored for best visual results.
 
 <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:6px 0;">
   <figure style="flex:1 1 220px;max-width:280px;margin:0;text-align:center;">

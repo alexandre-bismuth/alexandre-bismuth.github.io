@@ -16,33 +16,33 @@ Contact: [abismuth@g.harvard.edu](mailto:abismuth@g.harvard.edu) • [linkedin.c
 
 **Harvard University** — Cambridge, MA, USA · *2026 – 2027*  
 *MS Data Science*
-- Coursework: Data Science, Machine Learning Topics, Sparse Inference, Efficient Deep Learning, Sensorimotor Learning.
+- Coursework: Data Science, Machine Learning, Sparse Inference, GPU Training Optimizations, Networks, Embodied Learning.
 - Anne Dias Griffin and Kenneth C. Griffin Fellow
 
 **University of Oxford** — Oxford, UK · *2025 – 2026*  
-*MSc in Advanced Computer Science (AI Specialisation)*
+*MSc in Advanced Computer Science (Artificial Intelligence Specialisation)*
 - Coursework: Geometric Deep Learning, Uncertainty in Deep Learning, Computer Vision, Computational Medicine, Computational Game Theory, Algorithmic Foundations of Collective Decision-Making, Database Systems Implementation.
 
 **École Polytechnique** — Paris, France · *2022 – 2025*  
 *BSc in Mathematics & Computer Science • GPA 3.8/4.0 (Cum Laude)*
 - Selected Coursework: Linear Algebra, Analysis, Probability, Statistics, Stochastic Processes, Machine Learning, Numerical Analysis, Web Dev, Algorithms, Complexity, Computer Proofs, Formal Languages, Object-oriented Prog, Computer Architecture, Concurrency, Graphics.
-- International Honors Program, Stanford University: Coursework in Tech Entrepreneurship and Artificial Intelligence • GPA 3.7
-- Visiting student, University of Oxford: Coursework in Theories of Deep Learning, Graph Representation Learning, Graph Theory, Information Theory, Ethics of AI • GPA 4.0
+- International Honors Program, Stanford University: Tech Entrepreneurship and Artificial Intelligence • GPA 3.7
+- Visiting student, University of Oxford: Mathematics and Computer Science • GPA 4.0
 
 **École Jeannine Manuel** — Paris, France · *2015 – 2022*  
-*French International Baccalaureate, American Section • awarded with highest honours (17.5/20)*
+*French International Baccalaureate, American Section • 17.5/20 (Highest Honours)*
 - Majors: Mathematics, Physics & Chemistry, Computer Science (20/20 for each) — Further Mathematics elective
 
 ---
 
 ##### Experience
 
-**Master's Thesis** — British Open-Ended Learning & Discovery Lab, UK · *Apr 26 – Aug 26*
+**Graduate Researcher** — British Open-Ended Learning & Discovery Lab, UK · *Apr 26 – Today*
 - Building large market foundation models for high-frequency trading co-supervised by Prof Ani Calinescu and Prof Jakob Foerster
-- Post-trained a Mamba-3 SSM with GANs and reinforcement learning (GRPO, EGGROLL) to predict Limit Order Book messages
+- Post-training of state-space models to improve the distribution matching and performance in downstream tasks of market simulators
 
-**Bachelor Thesis** — University of Oxford, UK · *Jan 25 – Mar 25*
-- Wrote "Optimising Gunshot Detection in Tropical Forests for Wildlife Protection with TinyML" supervised by Prof Alex Rogers
+**Undergraduate Researcher** — University of Oxford, UK · *Jan 25 – Mar 25*
+- Bachelor thesis on gunshot detection in tropical forests for wildlife protection with TinyML supervised by Prof Alex Rogers
 - Developed a SoTA ML Arduino pipeline with 256kB RAM and 1MB memory via model compression and knowledge distillation
 
 **Software Development Engineer Intern** — Amazon, Spain · *Jul 24 – Sep 24*
@@ -69,4 +69,4 @@ Contact: [abismuth@g.harvard.edu](mailto:abismuth@g.harvard.edu) • [linkedin.c
 
 - **Programming** — Python, C++, C, Java, Kotlin, JavaScript, Scala, Haskell, SQL, Rocq || PyTorch, TensorFlow, AWS, HPCs
 - **Languages** — French (Native), English (Fluent — 116/120 TOEFL IBT), Spanish (Fluent)
-- **Interests** — Music: Singing, Piano, Guitar || Sports: Endurance Running, Volleyball, Rowing, Padel, Rugby
+- **Interests** — Music: Singing, Piano, Guitar || Sports: Endurance Running, Rowing, Padel, Rugby

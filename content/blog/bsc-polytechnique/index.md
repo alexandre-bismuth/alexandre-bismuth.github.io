@@ -3,8 +3,8 @@ title: "New BSc program of École Polytechnique"
 date: 2025-07-01
 tags: []
 author: "Alexandre Bismuth"
-description: "A candid review of the Bachelor of Science program at École Polytechnique — the people, the workload, the campus life, and where graduates end up."
-summary: "A candid review of the Bachelor of Science program at École Polytechnique — the people, the workload, the campus life, and where graduates end up."
+description: "A candid review of the Bachelor of Science program at École Polytechnique: the people, the workload, the campus life, and where graduates end up."
+summary: "Despite a heavy workload, the BX program allows you to meet amazing people as well as gain incredible amounts of knowledge and experience while being an amazing launchpad for graduate education."
 cover:
     image: "cohort.jpeg"
     alt: "The Bachelor of Science cohort gathered together"
@@ -14,7 +14,7 @@ TL;DR - Despite a heavy workload, the BX program allows you to meet amazing peop
 
 Studying in the Bachelor of Science of École Polytechnique is a journey, in the good sense. To start with a bit of background, we are a cohort of about 140 students, of whom approximately half are francophone (French people that lived around the globe + people from Northern Africa and Lebanon), and half from dozens and dozens of countries (with the most prominent ones being Romania, Russia, Serbia, Poland, Germany, Spain, Italy, India, China, Vietnam, Brazil and maybe a few more). Students have a very high academic level, despite some variance.
 
-Over the first year, you learn to cope with the high-workload of the program. You discover the basis of mathematics through Analysis, Linear Algebra, and Calculus (roughly the program of "prépa"). Meanwhile, you also study Computer Science, Physics, and Economics—all at a less intensive rate. Second-majors are beginner-friendly, but their difficulty ramps up very quickly. In parallel, you make friends, join the « bachelor family », and join committees. Depending on the student board and the time of year, there are also parties to attend and fun events to take part in. In addition, there is a campaign week full of fun activities where first-years compete to be elected as student board. It is perfect to add 24/24hr crêpes to your study sessions, or have fun in bouncy castles as if you were four. These are nonetheless all still side activities as the Bachelor program requires you to keep working continuously if you want to keep a high GPA.
+Over the first year, you learn to cope with the high-workload of the program. You discover the basis of mathematics through Analysis, Linear Algebra, and Calculus (roughly the program of "prépa"). Meanwhile, you also study Computer Science, Physics, and Economics, all at a less intensive rate. Second-majors are beginner-friendly, but their difficulty ramps up very quickly. In parallel, you make friends, join the « bachelor family », and join committees. Depending on the student board and the time of year, there are also parties to attend and fun events to take part in. In addition, there is a campaign week full of fun activities where first-years compete to be elected as student board. It is perfect to add 24/24hr crêpes to your study sessions, or have fun in bouncy castles as if you were four. These are nonetheless all still side activities as the Bachelor program requires you to keep working continuously if you want to keep a high GPA.
 
 During the second year, this is when work really starts to kick in (at least for me). After experimenting during the first year, you are a bit more comfortable with your routine, but can still struggle to maintain a healthy lifestyle. After choosing a major (Mathematics + CS/Physics/Econ), courses become harder and the 3 core courses per major really start to stack up. Meanwhile, you often have to deal with academic problems. Whether it is about poor organization, grading scales, or other questionable rules, you will feel like losing your mind at some point. Don't panic though; it is still fun, you are always surrounded by friends, and the study environment is nice.
 
@@ -32,7 +32,7 @@ It can be a lot at times but is reasonable in my opinion overall. It also depend
 
 **What's the campus like?**
 
-The campus is nice. Some parts are outdated, but ongoing renovations should slowly solve that problem in the coming decade. You are in a small student city in the middle of nowhere, which is 20km south of Paris—1hr from the center in RER and 30 min by car. There are sports facilities which are almost always accessible and free of charge. Building 103 really feels like home, as it is where all bachelor students live. You have a nice private bedroom and bathroom with a kitchen shared among four students. The only notable downside is that common areas are poorly maintained.
+The campus is nice. Some parts are outdated, but ongoing renovations should slowly solve that problem in the coming decade. You are in a small student city in the middle of nowhere, which is 20km south of Paris, 1hr from the center in RER and 30 min by car. There are sports facilities which are almost always accessible and free of charge. Building 103 really feels like home, as it is where all bachelor students live. You have a nice private bedroom and bathroom with a kitchen shared among four students. The only notable downside is that common areas are poorly maintained.
 
 **Is it hard to get in?**
 

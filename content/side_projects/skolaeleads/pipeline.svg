@@ -10,7 +10,7 @@
   <rect width="1600" height="510" fill="#ffffff"/>
 
   <!-- section label: live -->
-  <text x="40" y="52" font-size="15" fill="#8a8a8a" letter-spacing="1.6">LIVE — WHILE THE CONVERSATION HAPPENS</text>
+  <text x="40" y="52" font-size="15" fill="#8a8a8a" letter-spacing="1.6">LIVE: WHILE THE CONVERSATION HAPPENS</text>
 
   <!-- row 1 boxes -->
   <g stroke="#1a1a1a" stroke-width="1.5" fill="#ffffff">
@@ -48,7 +48,7 @@
   <text x="957" y="220" text-anchor="middle" font-size="15" fill="#8a8a8a">transcript + lead form pushed back to the phone, for the rep to verify</text>
 
   <!-- divider -->
-  <text x="40" y="290" font-size="15" fill="#8a8a8a" letter-spacing="1.6">END OF DAY — THE PHONE UPLOADS CONFIRMED LEADS AND THE FULL TRANSCRIPT</text>
+  <text x="40" y="290" font-size="15" fill="#8a8a8a" letter-spacing="1.6">END OF DAY: THE PHONE UPLOADS CONFIRMED LEADS AND THE FULL TRANSCRIPT</text>
   <line x1="40" y1="308" x2="1560" y2="308" stroke="#d5d5d5" stroke-width="1.5" stroke-dasharray="6 5"/>
 
   <!-- row 2 boxes -->

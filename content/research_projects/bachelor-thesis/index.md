@@ -26,7 +26,7 @@ cover:
 
 Unsustainable hunting is one of the leading factors of the acceleration of biodiversity loss, prompting the creation of wildlife protection laws in countries home to vast tropical forests. In this context, acoustic detection using low-cost audio loggers offers a practical way to monitor hunting pressure over wide areas.
 
-I optimise a two-stage unconstrained pipeline that employs EfficientNets and Mel Spectrograms for gunshot detection in tropical forests, achieving a **5.72% improvement in F1 score** and a **6.67% improvement in AUPRC** over the current state-of-the-art. To address the storage and real-time limitations of such a system, I then leverage AI-oriented microcontrollers to provide real-time detection and immediate alerts. The resulting compact model, deployable on an **Arduino Nano 33 BLE Sense Rev2**, achieves an **F1 score of 0.840** and an **AUPRC score of 0.849** — offering near state-of-the-art accuracy while drastically reducing computational costs.
+I optimise a two-stage unconstrained pipeline that employs EfficientNets and Mel Spectrograms for gunshot detection in tropical forests, achieving a **5.72% improvement in F1 score** and a **6.67% improvement in AUPRC** over the current state-of-the-art. To address the storage and real-time limitations of such a system, I then leverage AI-oriented microcontrollers to provide real-time detection and immediate alerts. The resulting compact model, deployable on an **Arduino Nano 33 BLE Sense Rev2**, achieves an **F1 score of 0.840** and an **AUPRC score of 0.849**, offering near state-of-the-art accuracy while drastically reducing computational costs.
 
 Leveraging TinyML for on-device inference, this approach mitigates storage bottlenecks while enabling instant alerts, yielding a scalable, real-time solution that closes the loop between data collection and active law enforcement.
 
@@ -34,9 +34,9 @@ Leveraging TinyML for on-device inference, this approach mitigates storage bottl
 
 ##### Contributions
 
-1. **Analytical framework** — crafting a ReLU network that approximates a gunshot signal with any error, providing indications regarding minimal model complexity.
-2. **Unconstrained pipeline** — optimising gunshot detection through experimentations with various preprocessing methods and adjustments in model architectures.
-3. **Lightweight architecture** — designing gunshot detection systems for embedded devices by combining efficient design choices with model compression methods.
+1. **Analytical framework**: crafting a ReLU network that approximates a gunshot signal with any error, providing indications regarding minimal model complexity.
+2. **Unconstrained pipeline**: optimising gunshot detection through experimentations with various preprocessing methods and adjustments in model architectures.
+3. **Lightweight architecture**: designing gunshot detection systems for embedded devices by combining efficient design choices with model compression methods.
 
 ---
 

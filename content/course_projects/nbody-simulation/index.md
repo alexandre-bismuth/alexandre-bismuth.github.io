@@ -4,7 +4,7 @@ date: 2025-06-01
 tags: []
 author: "Alexandre Bismuth"
 description: "CSE305 concurrent programming project: a gravitational N-Body simulator optimised from a sequential solver to parallel, Barnes-Hut, and CUDA implementations."
-summary: "CSE305 concurrent programming project at École Polytechnique. A gravitational N-Body simulator taken from a naive sequential solver to dynamically load-balanced parallel, Barnes-Hut, and CUDA-accelerated implementations — fast enough to run 100 thousand bodies over a month in about 30 seconds."
+summary: "CSE305 concurrent programming project at École Polytechnique. A gravitational N-Body simulator taken from a naive sequential solver to dynamically load-balanced parallel, Barnes-Hut, and CUDA-accelerated implementations, fast enough to run 100 thousand bodies over a month in about 30 seconds."
 cover:
     image: "cover.png"
     alt: "Galactic N-Body simulation of the Milky Way"
@@ -12,7 +12,7 @@ cover:
 
 ---
 
-*Concurrent Programming (CSE305), Bachelor of Science, École Polytechnique — Academic year 2024/2025.*
+*Concurrent Programming (CSE305), Bachelor of Science, École Polytechnique, academic year 2024/2025.*
 
 <div class="buttons" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin:14px 0 10px 0;">
   <a class="button" style="flex:1;text-align:center;margin:0;padding:5px 10px;background:rgba(0,0,0,0.1);" href="report.pdf"><span class="button-inner">Report</span></a>
@@ -27,10 +27,10 @@ The goal of this project is to implement a gravity simulation capable of calcula
 
 The work is built in four stages, each one compounding on the last:
 
-1. **The straightforward implementation** — a sequential N-Body simulator with its own renderer written with the *Magick++* library, using Newton's law of universal gravitation to compute the resulting force applied on each body and update positions accordingly.
-2. **Parallelization** — a parallel algorithm with dynamic load balancing for force computation and position updating, alongside parallelized image creation to avoid an I/O bottleneck.
-3. **Barnes-Hut Algorithm** — a hierarchical force approximation that takes force computation from O(*n*²) to O(*n* log *n*).
-4. **CUDA Implementation** — a GPU implementation that takes advantage of the numerous GPU cores to perform force computation, reaching huge speed-ups.
+1. **The straightforward implementation**: a sequential N-Body simulator with its own renderer written with the *Magick++* library, using Newton's law of universal gravitation to compute the resulting force applied on each body and update positions accordingly.
+2. **Parallelization**: a parallel algorithm with dynamic load balancing for force computation and position updating, alongside parallelized image creation to avoid an I/O bottleneck.
+3. **Barnes-Hut Algorithm**: a hierarchical force approximation that takes force computation from O(*n*²) to O(*n* log *n*).
+4. **CUDA Implementation**: a GPU implementation that takes advantage of the numerous GPU cores to perform force computation, reaching huge speed-ups.
 
 ---
 
@@ -57,7 +57,7 @@ Using the *Magick++* library, a renderer object creates an image at every iterat
 
 ##### Parallelizing with dynamic load balancing
 
-For a simulation with 5 thousand bodies that lasts one month (with day-steps), the sequential program spends 99.9% of its time calculating all of the pairwise interactions. Splitting the upper-triangular force matrix across threads helps, but the naive split is heavily unbalanced — the first thread can take 19% of the work instead of 10%. Introducing an **atomic counter** that points to the next available row enables near-perfect thread balancing, taking the speed-up from **3.70× to 8.15×** on 10 threads. A dedicated rendering thread further removes the I/O bottleneck by creating each frame in parallel with the next force computation.
+For a simulation with 5 thousand bodies that lasts one month (with day-steps), the sequential program spends 99.9% of its time calculating all of the pairwise interactions. Splitting the upper-triangular force matrix across threads helps, but the naive split is heavily unbalanced: the first thread can take 19% of the work instead of 10%. Introducing an **atomic counter** that points to the next available row enables near-perfect thread balancing, taking the speed-up from **3.70× to 8.15×** on 10 threads. A dedicated rendering thread further removes the I/O bottleneck by creating each frame in parallel with the next force computation.
 
 ---
 
@@ -69,7 +69,7 @@ To further accelerate force computation, the simulation implements the Barnes-Hu
 
 ##### GPU-accelerated galaxies with CUDA
 
-The CUDA framework enables us to use NVIDIA GPUs (which have huge amounts of threads available) to perform computations in extreme parallel. On an RTX A5000 with 12 288 concurrent threads, assigning one matrix entry per thread achieves perfect load balancing across the upper-triangular interaction matrix. This runs 5 thousand bodies over a month in **0.660 seconds** — a **20.4× improvement** over the parallel implementation with load balancing — while keeping the average divergence per body on the order of 10⁻¹⁰%.
+The CUDA framework enables us to use NVIDIA GPUs (which have huge amounts of threads available) to perform computations in extreme parallel. On an RTX A5000 with 12 288 concurrent threads, assigning one matrix entry per thread achieves perfect load balancing across the upper-triangular interaction matrix. This runs 5 thousand bodies over a month in **0.660 seconds**, a **20.4× improvement** over the parallel implementation with load balancing, while keeping the average divergence per body on the order of 10⁻¹⁰%.
 
 <figure style="margin:10px auto;max-width:520px;text-align:center;">
   <img src="milky-way.gif" alt="Milky Way galactic simulation" style="width:100%;border-radius:10px;">

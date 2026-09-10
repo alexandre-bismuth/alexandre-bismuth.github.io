@@ -1,10 +1,10 @@
 ---
-title: "PickYourCourses — a Telegram Bot for Course Reviews"
+title: "PickYourCourses: a Telegram Bot for Course Reviews"
 date: 2025-07-01
 tags: []
 author: "Alexandre Bismuth"
 description: "A Telegram bot for École Polytechnique students to share and read course reviews, running serverless on AWS Lambda."
-summary: "A Telegram bot for École Polytechnique students to share and read course reviews — built in TypeScript and running serverless on AWS Lambda, DynamoDB, and API Gateway."
+summary: "A Telegram bot for École Polytechnique students to share and read course reviews, built in TypeScript and running serverless on AWS Lambda, DynamoDB, and API Gateway."
 ---
 
 ---
@@ -17,7 +17,7 @@ summary: "A Telegram bot for École Polytechnique students to share and read cou
 
 ##### Overview
 
-PickYourCourses is a Telegram bot for École Polytechnique students to share and read course reviews. It lets students browse courses, rate them, and vote on each other's reviews — all from within Telegram. The bot is written in TypeScript, organised into webhook handlers, data models, business-logic services, and utilities.
+PickYourCourses is a Telegram bot for École Polytechnique students to share and read course reviews. It lets students browse courses, rate them, and vote on each other's reviews, all from within Telegram. The bot is written in TypeScript, organised into webhook handlers, data models, business-logic services, and utilities.
 
 The project is fully open-source and built to be adaptable: anyone who would like to deploy the same course-review system for their own university is free to take the code, swap in their own course catalogue, and stand it up on their own infrastructure.
 

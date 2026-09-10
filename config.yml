@@ -59,7 +59,7 @@ params:
     profileMode:
           enabled: true
           title: Alexandre Bismuth
-          subtitle: "I am an incoming Data Science student at Harvard University and a student researcher for the British Open-Ended Learning & Discovery Lab. Previously, I obtained a BSc in Mathematics and Computer Science from École Polytechnique and (soon) an MSc in Advanced Computer Science from the University of Oxford."
+          subtitle: "I am a Data Science student at Harvard University and a student researcher for the [British Open-Ended Learning & Discovery Lab](https://bold-lab.ai/). Previously, I obtained a BSc in Mathematics and Computer Science from École Polytechnique and an MSc in Advanced Computer Science from the University of Oxford."
           imageUrl: "prof_pic.png"
           imageWidth: 160
           imageHeight: 160

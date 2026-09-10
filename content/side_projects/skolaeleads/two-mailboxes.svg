@@ -14,7 +14,7 @@
   <path d="M245 172 C300 172 310 220 366 230" fill="none" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#m1)"/>
 
   <rect x="375" y="35" width="455" height="105" rx="10" fill="#fdf2ee" stroke="#e4572e" stroke-width="1.5"/>
-  <text x="400" y="72" font-size="20" fill="#1a1a1a">Private coaching — to the rep</text>
+  <text x="400" y="72" font-size="20" fill="#1a1a1a">Private coaching for the rep</text>
   <text x="400" y="99" font-size="14" fill="#777777">what worked, what to change, phase by phase</text>
   <text x="400" y="121" font-size="14" fill="#777777">sent to them, and to no one else</text>
 
@@ -22,7 +22,7 @@
   <text x="830" y="172" text-anchor="end" font-size="13" fill="#9a9a9a" letter-spacing="0.4">nothing individual crosses this line</text>
 
   <rect x="375" y="200" width="455" height="105" rx="10" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.5"/>
-  <text x="400" y="237" font-size="20" fill="#1a1a1a">Day summary — to the employer</text>
+  <text x="400" y="237" font-size="20" fill="#1a1a1a">Day summary for the employer</text>
   <text x="400" y="264" font-size="14" fill="#777777">leads captured, score distribution, top prospects</text>
   <text x="400" y="286" font-size="14" fill="#777777">no individual feedback, ever</text>
 </svg>
