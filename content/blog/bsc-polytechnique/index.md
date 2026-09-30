@@ -1,5 +1,5 @@
 ---
-title: "New BSc program of École Polytechnique"
+title: "BSc program of École Polytechnique"
 date: 2025-07-01
 tags: []
 author: "Alexandre Bismuth"
