@@ -4,10 +4,10 @@ date: 2025-04-01
 tags: []
 author: "Alexandre Bismuth"
 description: "Bachelor thesis: real-time, on-device gunshot detection for tropical forests using TinyML."
-summary: "Bachelor thesis supervised by Professor Alex Rogers developing a two-stage gunshot detection pipeline for tropical forests in a low-power Arduino microcontroller through model compression and knowledge distillation."
+summary: "Unsustainable hunting drives biodiversity loss, and acoustic detection with low-cost audio loggers is a practical way to monitor hunting pressure over wide tropical forests. We first optimise a two-stage pipeline using EfficientNets and Mel Spectrograms for gunshot detection, improving F1 score by 5.72% and AUPRC by 6.67% over the state of the art. For real-time alerts, we then move detection onto AI-oriented microcontrollers. A compact convolutional network, distilled from the larger model and deployable on an Arduino Nano 33 BLE Sense Rev2, reaches an F1 score of 0.840 and an AUPRC of 0.849, near state-of-the-art accuracy at a fraction of the cost."
 cover:
     image: "bachelor-thesis-cover.jpeg"
-    alt: "A hunter in a tropical forest detected by a low-power TinyML acoustic sensor"
+    alt: "Acoustic hunting sensor in a tropical forest"
 ---
 
 ---

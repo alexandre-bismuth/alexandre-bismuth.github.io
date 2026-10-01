@@ -4,10 +4,10 @@ date: 2026-08-01
 tags: []
 author: "Alexandre Bismuth"
 description: "Master's thesis: what a limit-order-book foundation model learns about market microstructure, and how to refine it with an objective no gradient reaches."
-summary: "Master's thesis supervised by Professor Ani Calinescu and Professor Jakob Foerster. Probing and steering the recurrent state of a Mamba-3 order-flow model uncovers a representation of the market as a flow, and an adversarial post-training stage improves generated-market realism by 17.6% at a thousandth of the pre-training token budget."
+summary: "Autoregressive foundation models simulate the market by generating the message flow of limit order books. This thesis asks what these models learn about market microstructure, and introduces a post-training stage that scores full sequences rather than single messages. Probing the recurrent state of a Mamba-3 model uncovers a representation of the market as a flow that can be steered and linearly read to predict price moves. Training an adversarial critic through the non-differentiable matching engine and updating the generator with evolutionary search improves LOB-Bench realism by 17.6% with a thousandth of the data and under 10% of the compute."
 cover:
     image: "cover.png"
-    alt: "A state-space block: the residual stream running through the stack, and the recurrent state carried from the past"
+    alt: "State-space block with its recurrent state"
 ---
 
 ---
