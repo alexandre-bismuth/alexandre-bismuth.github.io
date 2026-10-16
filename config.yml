@@ -60,7 +60,7 @@ params:
           enabled: true
           title: Alexandre Bismuth
           subtitle: "I am a Data Science student at Harvard University and a student researcher for the [British Open-Ended Learning & Discovery Lab](https://bold-lab.ai/). Previously, I obtained a BSc in Mathematics and Computer Science from École Polytechnique and an MSc in Advanced Computer Science from the University of Oxford."
-          imageUrl: "prof_pic.png"
+          imageUrl: "prof_pic.jpg"
           imageWidth: 160
           imageHeight: 160
           buttons:
@@ -104,7 +104,7 @@ params:
         hiddenInSingle: true
     label:
       text: "Alexandre Bismuth"
-      icon: "prof_pic.png"
+      icon: "prof_pic.jpg"
       iconHeight: 18
 
 markup:
