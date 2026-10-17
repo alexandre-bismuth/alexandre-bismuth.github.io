@@ -1,0 +1,40 @@
+/* Category tabs on section lists (layouts/partials/list_tabs.html). */
+
+.list-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin-bottom: var(--gap);
+}
+
+.list-tabs button {
+    font-family: var(--pixel-font);
+    font-variation-settings: 'wght' var(--pixel-weight), 'ROND' 100;
+    font-synthesis: none;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    word-spacing: -0.2em;
+    color: var(--secondary);
+    background: none;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    padding: 0 0 2px;
+    cursor: pointer;
+}
+
+.list-tabs button:hover {
+    color: var(--primary);
+}
+
+.list-tabs button[aria-selected="true"] {
+    color: var(--pixel-color);
+    border-bottom-color: currentColor;
+}
+
+.list-tabs-empty {
+    color: var(--secondary);
+}
+
+.main article[hidden] {
+    display: none;
+}

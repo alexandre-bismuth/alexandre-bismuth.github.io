@@ -1,0 +1,33 @@
+{{- /* Category tabs for a section list. Tabs come from the section's `tabs`
+       front matter, membership from each page's `categories`. */ -}}
+{{- with .Params.tabs }}
+<nav class="list-tabs" role="tablist" aria-label="Categories">
+  <button type="button" role="tab" aria-selected="true" data-tab="all">All</button>
+  {{- range . }}
+  <button type="button" role="tab" aria-selected="false" data-tab="{{ urlize . }}">{{ . }}</button>
+  {{- end }}
+</nav>
+<p class="list-tabs-empty" hidden>No projects here yet.</p>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = [...document.querySelectorAll('.list-tabs [data-tab]')];
+    const entries = [...document.querySelectorAll('.main article[data-categories]')];
+    const empty = document.querySelector('.list-tabs-empty');
+    const show = (name, updateUrl) => {
+      if (!tabs.some(t => t.dataset.tab === name)) name = 'all';
+      let shown = 0;
+      for (const e of entries) {
+        const on = name === 'all' || e.dataset.categories.split(/\s+/).includes(name);
+        e.hidden = !on;
+        shown += on;
+      }
+      tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.tab === name));
+      empty.hidden = shown > 0;
+      if (updateUrl) history.replaceState(null, '', name === 'all' ? location.pathname : '#' + name);
+    };
+    tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.tab, true)));
+    window.addEventListener('hashchange', () => show(location.hash.slice(1)));
+    show(location.hash.slice(1));
+  });
+</script>
+{{- end }}

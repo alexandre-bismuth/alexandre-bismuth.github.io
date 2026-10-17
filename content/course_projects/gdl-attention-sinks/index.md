@@ -2,6 +2,7 @@
 title: "Why Don't Graph Transformers Attend to the Same Token? 🚱"
 date: 2026-03-21
 tags: []
+categories: ["Machine Learning"]
 author: "Alexandre Bismuth"
 description: "Geometric Deep Learning mini-project: a theoretical and empirical study of when and where attention sinks form in Graph Transformers."
 summary: "Geometric Deep Learning mini-project at the University of Oxford. Extends the multi-layer sensitivity bound of Barbero et al. (2025) to Graph Transformers, revealing that, unlike LLMs, full attention weakens sink pressure as graphs grow, and that edge-conditioned gating suppresses over-mixing."

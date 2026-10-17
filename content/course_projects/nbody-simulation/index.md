@@ -2,6 +2,7 @@
 title: "N-Body Simulation: From a Sequential Solver to GPU-Accelerated Galaxies"
 date: 2025-06-01
 tags: []
+categories: ["High-Performance Computing"]
 author: "Alexandre Bismuth"
 description: "CSE305 concurrent programming project: a gravitational N-Body simulator optimised from a sequential solver to parallel, Barnes-Hut, and CUDA implementations."
 summary: "CSE305 concurrent programming project at École Polytechnique. A gravitational N-Body simulator taken from a naive sequential solver to dynamically load-balanced parallel, Barnes-Hut, and CUDA-accelerated implementations, fast enough to run 100 thousand bodies over a month in about 30 seconds."

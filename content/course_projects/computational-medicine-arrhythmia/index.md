@@ -2,6 +2,7 @@
 title: "Cardiac Sex Differences and Antidepressant-Induced Arrhythmias"
 date: 2026-03-14
 tags: []
+categories: ["Modelling"]
 author: "Alexandre Bismuth"
 description: "Computational Medicine mini-project: using in-silico cardiomyocyte models to quantify how electrophysiologic sex differences affect vulnerability to antidepressant-induced arrhythmias."
 summary: "Computational Medicine mini-project at the University of Oxford. Uses the ToR-ORd cardiomyocyte model and a population-of-models approach to show that female hearts are quantifiably more vulnerable to antidepressant-induced arrhythmias, supporting sex-differentiated prescription guidelines."

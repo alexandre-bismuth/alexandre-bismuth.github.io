@@ -2,6 +2,7 @@
 title: "Bayesian Active Learning under Uncertainty"
 date: 2026-01-21
 tags: []
+categories: ["Machine Learning"]
 author: "Alexandre Bismuth"
 description: "Uncertainty in Deep Learning mini-project: Bayesian deep active learning on MNIST, with a novel label-likelihood noise filter and diversity-aware acquisitions."
 summary: "Uncertainty in Deep Learning mini-project at the University of Oxford. Reproduces Bayesian deep active learning, then extends it with a label-likelihood filter for noisy labels and clustering-based diversity-aware acquisitions to speed up convergence."

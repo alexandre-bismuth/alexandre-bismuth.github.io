@@ -2,6 +2,7 @@
 title: "A Free-Surface 2D Fluid Solver from Voronoï Diagrams to Optimal Transport"
 date: 2025-06-18
 tags: []
+categories: ["Modelling"]
 author: "Alexandre Bismuth"
 description: "CSE306 Computer Graphics project: a free-surface 2D fluid solver built on Power diagrams, semi-discrete optimal transport with L-BFGS, and the de Gallouet-Mérigot incompressible Euler scheme."
 summary: "CSE306 Computer Graphics project at École Polytechnique. A free-surface 2D fluid solver built from the ground up: Voronoï and Power diagrams, semi-discrete optimal transport optimised with L-BFGS, and the de Gallouet-Mérigot incompressible Euler scheme."
