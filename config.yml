@@ -84,8 +84,8 @@ params:
           url: mailto:abismuth@g.harvard.edu
         - name: Calendly
           url: https://calendly.com/alexbismuth10/quick-meet
-        # - name: Google Scholar
-        #   url: https://scholar.google.com/citations?user=user
+        - name: Google Scholar
+          url: https://scholar.google.com/citations?user=0_drUysAAAAJ
         - name: GitHub
           url: https://github.com/alexandre-bismuth
         # - name: Substack
