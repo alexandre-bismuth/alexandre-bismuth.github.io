@@ -1,0 +1,14 @@
+{{- /* For list entries that live elsewhere: the card links to `externalURL`
+       directly, and this page only forwards anyone who lands on it. */ -}}
+{{- $url := .Params.externalURL -}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{ .Title }}</title>
+  <link rel="canonical" href="{{ $url }}">
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url={{ $url }}">
+</head>
+<body><a href="{{ $url }}">{{ .Title }}</a></body>
+</html>
