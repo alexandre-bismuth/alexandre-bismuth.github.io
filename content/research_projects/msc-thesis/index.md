@@ -4,7 +4,7 @@ date: 2026-08-01
 tags: []
 author: "Alexandre Bismuth"
 description: "Master's thesis: what a limit-order-book foundation model learns about market microstructure, and how to refine it with an objective no gradient reaches."
-summary: "Autoregressive foundation models simulate the market by generating the message flow of limit order books. This thesis asks what these models learn about market microstructure, and introduces a post-training stage that scores full sequences rather than single messages. Probing the recurrent state of a Mamba-3 model uncovers a representation of the market as a flow that can be steered along its encoded features. Training an adversarial critic through the non-differentiable matching engine and updating the generator with evolutionary search improves LOB-Bench realism by 17.6% with a thousandth of the data and under 10% of the compute."
+summary: "Autoregressive foundation models simulate the market by generating the message flow of limit order books. This thesis asks what these models learn about market microstructure, and introduces a post-training stage that scores full sequences rather than single messages. Probing the recurrent state of a Mamba-3 model uncovers a representation of the market as a flow that can be steered along its encoded features. Training an adversarial critic through the non-differentiable matching engine and updating the generator with a memory-efficient variant of evolution strategies improves LOB-Bench realism by 17.6% with a thousandth of the data and under 10% of the compute."
 cover:
     image: "cover.png"
     alt: "State-space block with its recurrent state"
@@ -48,7 +48,7 @@ Every experiment draws on one corpus of message-level records covering eight US 
 
 ![The limit order book, its message stream, and order-flow imbalance](lob-and-ofi.png)
 
-Two generators of the same family carry the two studies. The interpretability chapter uses an 8.2M-parameter Mamba-3 model, small enough to read out at every layer over thousands of windows and deliberately denied the book, so any book statistic recovered from its state has been reconstructed from order flow rather than read from the input. The post-training chapter uses the dual-stream, book-conditioned generator below, 78.5M parameters trained on roughly 48B tokens of a single instrument, since a specialist is the strongest anchor for the stock it is tested on.
+Two generators of the same family carry the two studies. The interpretability chapter uses an 8.2M-parameter Mamba-3 model, small enough to read out at every layer over thousands of windows and deliberately denied the book, so whatever its state encodes about the book was built from messages alone rather than read from the input. The post-training chapter uses the dual-stream, book-conditioned generator below, 78.5M parameters trained on roughly 48B tokens of a single instrument, since a specialist is the strongest anchor for the stock it is tested on.
 
 ![Dual-stream architecture: a message encoder and a book encoder feeding a fused stack](architecture.png)
 
@@ -68,19 +68,19 @@ In Transformer-based foundation models, mechanistic interpretability probes the 
 
 ![Held-out R² decoded from the recurrent state versus the residual stream](state-vs-residual.png)
 
-Imbalance, traded volume and realised volatility all decode at *R*² of 0.06 or below from the residual stream, against 0.50 to 0.61 from the recurrent state, because the residual stream's linear memory horizon is only about two to five messages.
+Imbalance, traded volume and realised volatility all decode at *R*² of 0.06 or below from the residual stream, against 0.50 to 0.61 from the recurrent state, while the residual stream holds only a weak readout of the current touch.
 
-What the state holds is flow rather than a snapshot. Imbalance decodes about 5 times better from the state than from a readout of the full book snapshot (0.59 against 0.12), and a random-weights twin of identical architecture decodes it at about 0.01, so training is the only source of performance. Mamba-3's state-space duality also makes the state an exact weighted sum of one write per token, which lets me attribute it message by message: the newest message accounts for 58% of the raw state but only 7% of the decoded imbalance signal, half of which needs the last 56 messages. Order flow lives in a small long-memory subspace that the twin does not have.
+What the state holds is flow rather than a snapshot. Imbalance decodes about 5 times better from the state than from a readout of the full book snapshot (0.59 against 0.12), and a random-weights twin of identical architecture decodes it at about 0.01, so training is the only source of performance. Mamba-3's state-space duality also makes the state an exact weighted sum of one write per token, which lets me attribute it message by message: across all layers the newest message accounts for 58% of the state's write magnitude but only 7% of the decoded imbalance signal, half of which needs the last 56 messages. At the probe layer, order flow is held in a long-memory subspace of integrators that the twin does not have.
 
 ---
 
 ##### The state is used, but adds little about the future
 
-A probe only establishes that a quantity is present, so I also intervene. Writing a feature's direction into the state moves the model's beliefs as that feature's meaning dictates: the probability of a buy-side next message shifts from 0.45 to 0.57 across a full high-to-low step, and a turbulence push more than doubles the width of the next-price forecast. None of thirty shuffled-label axes at matched norm reaches the trained response, so the responses follow the encoded directions rather than the size of the push. Rolled out through the engine, the volume push carries through to the market and the flow push moves the generated order flow but not the price, so causal control ranks volume above order flow above volatility.
+A probe only establishes that a quantity is present, so I also intervene. Writing a feature's direction into the state moves the model's beliefs as that feature's meaning dictates: across the seen range the probability of a buy-side next message moves monotonically from 0.42 to 0.61, and a turbulence push widens the next-price forecast nine-fold. At every dose the trained response lies outside the full range of thirty shuffled-label axes at matched norm, so the responses follow the encoded directions rather than the size of the push. Rolled out through the engine, the volume push carries through to the market and the flow push moves the generated order flow on the sell side but not the price, so causal control ranks volume above order flow above volatility.
 
 ![Future-time decoding: held-out R² of linear state probes for the future mid-price move and imbalance](future-decoding.png)
 
-What the frozen state carries about the future is limited. A linear probe explains only 4% of the variance of the realised next-25-message mid-price move, level with the same probe handed the visible book, and no signal is left beyond about 100 messages. Read as three-class direction it reaches 42.9% accuracy at 50 messages, against 41.4% for the book snapshot and 34.7% for the majority class. The representation thus tracks the current flow but adds little forward information beyond what the visible book already holds, in line with the weak short-horizon predictability of mid-price moves. Flow is also the slowest thing the model learns, still improving after benchmark realism has plateaued, and it transfers to stocks never seen in training.
+What the frozen state carries about the future is limited. A linear probe explains only 4% of the variance of the realised next-25-message mid-price move, level with the same probe handed the visible book, and at most 5% of future top-5 imbalance, for which the book carries almost no signal; nothing is left beyond about 100 messages. On windows where the mid-price moves, the state calls the direction right 61.2% of the time at 25 messages, level with the book-snapshot readout at 61.8%, and its skill reaches chance by 500 messages. The representation thus tracks the current flow but carries little forward information. Flow is also the slowest thing the model learns, still improving after benchmark realism has plateaued, and it remains decodable on stocks never seen in training.
 
 ---
 
@@ -98,14 +98,14 @@ Because any learned reward is eventually over-optimised, and this one is a live 
 
 Scored once on 4,096 disjoint held-out windows from a 28-trading-day panel:
 
-| Model | WS-21 | Δ [95% CI] | Mean-*L*₁ | Δ [95% CI] |
-|---|---|---|---|---|
-| Pre-trained | 0.194 | | 0.179 | |
-| **Post-trained** | **0.160** | **−17.6%** [−19.7, −15.3] | **0.149** | **−17.0%** [−18.9, −15.8] |
-| Selection-null | 0.204 | +5.3% [+2.5, +8.1] | 0.193 | +7.8% [+5.9, +9.6] |
-| IsoFLOP control | 0.201 | +3.5% [+0.5, +6.5] | 0.186 | +3.9% [+1.9, +5.5] |
+| Model | Δ WS-21 [95% CI] | Δ Mean-*L*₁ [95% CI] |
+|---|---|---|
+| Pre-trained | reference | reference |
+| **Post-trained** | **−17.6%** [−19.7, −15.3] | **−17.0%** [−18.9, −15.8] |
+| Selection-null | +5.3% [+2.5, +8.1] | +7.8% [+5.9, +9.6] |
+| IsoFLOP control | +0.5% [−2.3, +3.4] | −0.4% [−2.2, +1.4] |
 
-Realism improves for every one of the ten seeds, each paired interval excluding zero, on about 50M training tokens, a thousandth of the pre-training corpus. Both controls land above the anchor: a selection-matched null bounds what selection bias alone could manufacture, and continued pre-training at matched compute reproduces none of the gain. Swapping the evolutionary update for GRPO reaches 16.0%, so the reward is optimiser-agnostic.
+Realism improves for every one of the ten seeds, each paired interval excluding zero, on about 50M training tokens, a thousandth of the pre-training corpus. The selection-matched null, which bounds what selection bias alone could manufacture, ends above the anchor, and continued pre-training at matched compute, fully annealed, lands within noise of it, reproducing none of the gain. Swapping the evolutionary update for GRPO reaches 16.0%, so the reward is optimiser-agnostic.
 
 ---
 
@@ -127,7 +127,7 @@ Two capabilities survive the update. Re-running the probing protocol leaves mark
 
 + A model trained only to predict the next message holds a representation of the market as a flow rather than a snapshot, in its recurrent state and nowhere else: imbalance decodes at *R*² of 0.59 against 0.12 from a book snapshot and 0.01 from a random-weights twin.
 + That representation is used, since steering the state moves the model's beliefs as each feature's meaning dictates, but its information about future prices adds little to the visible book.
-+ Adversarial post-training through the non-differentiable matching engine improves held-out realism by 17.6% on WS-21 and 17.0% on Mean-*L*₁ for every seed, on 50M tokens and 12 GPU-hours, while both controls end above the anchor.
++ Adversarial post-training through the non-differentiable matching engine improves held-out realism by 17.6% on WS-21 and 17.0% on Mean-*L*₁ for every seed, on 50M tokens and 12 GPU-hours, while a selection-matched null ends above the anchor and continued pre-training at matched compute within noise of it.
 + It reaches the failure mode that motivated it, cutting error accumulation over 500 generated messages from 3.1 to 2.3 times, while the pre-trained representation and directional accuracy stay intact.
 + Ablations give design guidelines: decode raw messages for the critic, and select checkpoints without the critic, because the reward is eventually hacked.
 
