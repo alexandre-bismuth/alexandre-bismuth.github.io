@@ -4,7 +4,7 @@ date: 2026-10-13
 tags: []
 author: ["Alexandre Bismuth", "Kang Li", "Aramis Marti-Shahandeh", "Valentin Mohl", "Jakob Foerster", "Anisoara Calinescu"]
 description: "Conference paper at ACM ICAIF 2026: a Wasserstein critic trained through the non-differentiable matching engine steers evolutionary updates of a limit-order-book foundation model, improving realism by 17.6% for under 12 GPU-hours."
-summary: "Autoregressive foundation models trained on limit order book data are the state of the art for market simulation, but their cross-entropy objective neither penalises the compounding of sampling errors over free-running rollouts nor targets desired market properties. This paper introduces an adversarial post-training framework: a Wasserstein critic, trained online on rollouts executed through the true, non-differentiable matching engine, steers gradient-free EGGROLL updates of a pre-trained generator through rank-4 LoRA perturbations under a KL trust region. On a held-out panel, post-training improves LOB-Bench realism by 17.6% (WS-21) and 17.0% (Mean-L1) for under 50M tokens and 12 GPU-hours per seed, and slows error accumulation over 500-message rollouts from 3.1× to 2.3×, while selection-matched and compute-matched controls yield no improvement."
+summary: "Autoregressive foundation models trained on limit order book data are the state of the art for market simulation, but their cross-entropy objective neither penalises the compounding of sampling errors over free-running rollouts nor targets desired market properties. This paper introduces a post-training method using a Wasserstein GAN objective: a critic, trained online on rollouts through the true, non-differentiable matching engine, guides evolution-strategies updates over rank-4 LoRA perturbations of the pre-trained generator under a KL trust region, using the memory-efficient EGGROLL variant. On a held-out panel, post-training improves LOB-Bench realism by 17.6% (WS-21) and 17.0% (Mean-L1) for under 50M tokens and 12 GPU-hours per seed, and slows error accumulation over 500-message rollouts from 3.1× to 2.3×, while selection-matched and compute-matched controls yield no improvement."
 cover:
     image: "cover.png"
     alt: "Adversarial post-training pipeline"
@@ -60,18 +60,18 @@ Any learned reward is eventually over-optimised, and this one is a live adversar
 
 ##### Post-training improves realism and slows error compounding
 
-Adversarial post-training improves held-out realism for every seed: WS-21 falls by 17.6% against the pre-trained model and Mean-*L*₁ by 17.0%, and the paired 95% bootstrap interval excludes zero for the ten-seed mean and for each seed individually (per-seed WS-21 from −11.3% to −23.9%). Two controls bound what the pipeline could have manufactured: a selection-matched null passes eight random LoRA perturbations of the base model, matched in parameter norm to the deployed checkpoints, through the identical selection and sealed test, and a compute-matched (IsoFLOP) control continues pre-training the anchor on the same unseen corpus. Both end above the anchor.
+Adversarial post-training improves held-out realism for every seed: WS-21 falls by 17.6% against the pre-trained model and Mean-*L*₁ by 17.0%, and the paired 95% bootstrap interval excludes zero for the ten-seed mean and for each seed individually (per-seed WS-21 from −11.3% to −23.9%). Two controls bound what the pipeline could have manufactured: a selection-matched null passes eight random LoRA perturbations of the base model, matched in parameter norm to the deployed checkpoints, through the identical selection and sealed test, and a compute-matched (IsoFLOP) control continues pre-training the anchor on the same unseen corpus. The selection null ends above the anchor and the IsoFLOP control within noise of the pre-trained model.
 
-| Model | WS-21 | Change [95% CI] | Mean-*L*₁ | Change [95% CI] |
-|---|---|---|---|---|
-| Pre-trained | 0.194 | | 0.179 | |
-| Post-trained | 0.160 | −17.6% [−19.7, −15.3] | 0.149 | −17.0% [−18.9, −15.8] |
-| Selection null | 0.204 | +5.3% [+2.5, +8.1] | 0.193 | +7.8% [+5.9, +9.6] |
-| IsoFLOP control | 0.201 | +3.5% [+0.5, +6.5] | 0.186 | +3.9% [+1.9, +5.5] |
+| Model | WS-21 change [95% CI] | Mean-*L*₁ change [95% CI] |
+|---|---|---|
+| Pre-trained | reference | reference |
+| Post-trained | −17.6% [−19.7, −15.3] | −17.0% [−18.9, −15.8] |
+| Selection null | +5.3% [+2.5, +8.1] | +7.8% [+5.9, +9.6] |
+| IsoFLOP control | +0.5% [−2.3, +3.4] | −0.4% [−2.2, +1.4] |
 
-<p style="font-size:0.82em;opacity:0.75;text-align:center;margin-top:-8px;">Sealed test at 4,096 held-out windows (28-day panel). Change is the mean over 10 seeds relative to the frozen pre-trained model, with paired window-block bootstrap 95% CIs; controls are single rows.</p>
+<p style="font-size:0.82em;opacity:0.75;text-align:center;margin-top:-8px;">Sealed test at 4,096 held-out windows (28-day panel). Each change is paired against the frozen pre-trained generator on the same windows, with window-block bootstrap 95% CIs; the post-trained change is the mean over 10 seeds.</p>
 
-The pipeline consumes about 50M training tokens, a thousand-fold reduction from the roughly 48B-token pre-training corpus, and 12 GPU-hours per seed. The improvement is not a token-budget effect that more pre-training could reproduce: extended to the compute of the full experiment, continued pre-training lands within noise of the anchor (+2.4%), which isolates the critic's sequence-level signal as the active ingredient. The gain also costs little likelihood: teacher-forced cross-entropy on held-out real windows rises by only 0.10% by step 20, while the KL divergence to the anchor grows monotonically in every seed.
+The pipeline consumes about 50M training tokens, a thousand-fold reduction from the roughly 48B-token pre-training corpus, and 12 GPU-hours per seed. The improvement is not a token-budget effect that more pre-training could reproduce: under the anchor's original recipe, with compute matched to a seed's full experiment and a fresh cosine learning-rate schedule spanning that budget, the fully annealed IsoFLOP control lands within noise of the anchor, its paired CIs spanning zero, which isolates the critic's sequence-level signal as the active ingredient. The gain also costs little likelihood: teacher-forced cross-entropy on held-out real windows rises by only 0.10% by step 20, while the KL divergence to the anchor grows monotonically in every seed.
 
 The gains reach the failure mode that motivates post-training. Over the 4,096 held-out windows, the true continuation is compared with a free-running rollout from the same context and, at each token position, the KL divergence between the two empirical marginals is normalised by the entropy of the true marginal. The pre-trained model's divergence grows 3.1× from the first to the last 25-message bin of a 500-message rollout, direct evidence that its errors compound. Post-training slows the accumulation to 2.3×, accumulating 26% less excess divergence than the anchor (95% CI [−33%, −20%]), with every seed below the anchor. The selection null accumulates 27% more than the anchor and continued pre-training accumulates at the anchor's rate: neither selection pressure nor more likelihood training slows accumulation; the critic's sequence-level signal does.
 
