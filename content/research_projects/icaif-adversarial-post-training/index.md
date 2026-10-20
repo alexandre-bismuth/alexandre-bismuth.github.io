@@ -20,6 +20,7 @@ cover:
 
 <div class="buttons" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin:14px 0 10px 0;">
   <a class="button" style="flex:1;text-align:center;margin:0;padding:5px 10px;background:rgba(0,0,0,0.1);" href="paper.pdf"><span class="button-inner">Paper</span></a>
+  <a class="button" style="flex:1;text-align:center;margin:0;padding:5px 10px;background:rgba(0,0,0,0.1);" href="https://arxiv.org/abs/2610.25604"><span class="button-inner">arXiv</span></a>
   <a class="button" style="flex:1;text-align:center;margin:0;padding:5px 10px;background:rgba(0,0,0,0.1);" href="https://github.com/alexandre-bismuth/WGAN-Post-Training"><span class="button-inner">Code</span></a>
 </div>
 
