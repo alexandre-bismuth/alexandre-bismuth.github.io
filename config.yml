@@ -82,8 +82,6 @@ params:
           url: cv.pdf
         - name: Email
           url: mailto:abismuth@g.harvard.edu
-        - name: Calendly
-          url: https://calendly.com/alexbismuth10/quick-meet
         - name: Google Scholar
           url: https://scholar.google.com/citations?user=0_drUysAAAAJ
         - name: GitHub
